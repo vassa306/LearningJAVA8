@@ -67,7 +67,7 @@ public class numbers {
 
             for (space = 1; space <= rows - i; space++) {
 
-              System.out.print(" ");
+              System.out.print(" / ");
             }
             while (star != (2 * i - 1)) {
                 System.out.print("*");
@@ -91,7 +91,7 @@ public class numbers {
         int j;
         int space = row -1;
 
-        for (j = 1; j<= row-5; j++)
+        for (j = 1; j<= row; j++)
         {
             for (i = 1; i<= space; i++)
             {
