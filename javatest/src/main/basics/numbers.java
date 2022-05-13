@@ -2,6 +2,7 @@ package main.basics;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class numbers {
     static int generateNumber(int max) {
@@ -57,6 +58,75 @@ public class numbers {
 
     }
 
+    // Function to demonstrate printing pattern
+    public static void printTriangle(int n) {
+        int rows = 10, i, space, star = 0;
+
+        for (i = 1; i <= rows; i++) {
+            // Printing spaces
+
+            for (space = 1; space <= rows - i; space++) {
+
+              System.out.print(" / ");
+            }
+            while (star != (2 * i - 1)) {
+                System.out.print("*");
+                star++;
+
+            }
+            star = 0;
+            // move to next row
+            System.out.print("\n");
+        }
+
+
+    }
+
+    public static void printDiamond(){
+        //pocet radku
+        int row = 10;
+        //pocet iteraci sloupce
+        int i;
+        //pocet radku
+        int j;
+        int space = row -1;
+
+        for (j = 1; j<= row; j++)
+        {
+            for (i = 1; i<= space; i++)
+            {
+                System.out.print(" / ");
+            }
+            space--;
+            for (i = 1; i <= 2 * j - 1; i++)
+            {
+                System.out.print("*");
+            }
+            System.out.println(" / ");
+        }
+       space = 1;
+        for (j = 1; j<= row - 1; j++)
+       {
+            for (i = 1; i<= space; i++)
+            {
+                System.out.print(" ");
+            }
+           space++;
+
+               for (i = 1; i<= 2 * (row - j) - 1; i++)
+           {
+                System.out.print("*");
+            }
+            System.out.println("");
+       }
+    }
+
+
+
+
+        // Driver Function
+
+
 
 
 
@@ -79,7 +149,12 @@ public class numbers {
 
         }
         System.out.println("minimal value is " + init);
+
+        printTriangle(7);
+
+        printDiamond();
     }
+
 }
 
 
