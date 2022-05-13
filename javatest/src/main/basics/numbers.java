@@ -1,5 +1,6 @@
 package main.basics;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,19 +42,20 @@ public class numbers {
             }
         }
     }
-   // if x > pole get i  x = list.get(i) it means min value found
-    public static int minNumber(List<Integer>list) {
+
+    // if x > pole get i  x = list.get(i) it means min value found
+    public static int minNumber(List<Integer> list) {
         int x = list.get(0);
 
         for (int i = 1; i < list.size(); i++) {
-            if (x > list.get(i)){
+            if (x > list.get(i)) {
                 x = list.get(i);
             }
         }
         return x;
     }
 
-    public static void minNumberVypis(List<Integer>list){
+    public static void minNumberVypis(List<Integer> list) {
         System.out.println("nejmensi cislo je " + minNumber(list));
 
     }
@@ -67,7 +69,7 @@ public class numbers {
 
             for (space = 1; space <= rows - i; space++) {
 
-              System.out.print(" / ");
+                System.out.print(" / ");
             }
             while (star != (2 * i - 1)) {
                 System.out.print("*");
@@ -82,53 +84,51 @@ public class numbers {
 
     }
 
-    public static void printDiamond(){
+    public static void printDiamond() {
         //pocet radku
         int row = 10;
         //pocet iteraci sloupce
         int i;
         //pocet radku
         int j;
-        int space = row -1;
+        int space = row - 1;
 
-        for (j = 1; j<= row; j++)
-        {
-            for (i = 1; i<= space; i++)
-            {
+        for (j = 1; j <= row; j++) {
+            for (i = 1; i <= space; i++) {
                 System.out.print(" ");
             }
             space--;
-            for (i = 1; i <= 2 * j - 3; i++)
-            {
+            for (i = 1; i <= 2 * j - 3; i++) {
                 System.out.print("*");
             }
             System.out.println(" ");
         }
-       space = 1;
-        for (j = 1; j<= row - 1; j++)
-       {
-            for (i = 1; i<= space; i++)
-            {
+        space = 1;
+        for (j = 1; j <= row - 1; j++) {
+            for (i = 1; i <= space; i++) {
                 System.out.print(" ");
             }
-           space++;
+            space++;
 
-               for (i = 1; i<= 2 * (row - j) - 1; i++)
-           {
+            for (i = 1; i <= 2 * (row - j) - 1; i++) {
                 System.out.print("*");
             }
             System.out.println("");
-       }
+        }
     }
 
+    public static void isLeapYear() {
+        LocalDate currentdate = LocalDate.now();
+        int currentyear = currentdate.getYear();
+        int leap = currentyear % 4;
+        System.out.println(currentyear);
+        if (leap < 1) {
+            System.out.println("This year is leap year " + currentyear);
 
-
-
-        // Driver Function
-
-
-
-
+        } else {
+            System.out.println("This year is not a leap year " + currentyear);
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -139,11 +139,11 @@ public class numbers {
         pole = generateList(20, 20);
         minNumberVypis(pole);
 
-        int [] array = {4,5,6,7,28,3,1,0, -4};
+        int[] array = {4, 5, 6, 7, 28, 3, 1, 0, -4};
         int init = array[0];
-        for(int i = 0; i< array.length; i++){
-            if(init>array[i]){
-                init=array[i];
+        for (int i = 0; i < array.length; i++) {
+            if (init > array[i]) {
+                init = array[i];
 
             }
 
@@ -153,7 +153,10 @@ public class numbers {
         printTriangle(7);
 
         printDiamond();
+
+        isLeapYear();
     }
+
 
 }
 
