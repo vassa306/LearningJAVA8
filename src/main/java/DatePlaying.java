@@ -5,7 +5,7 @@ public class DatePlaying {
 
     public boolean isLeapCurrentYear(){
         boolean leap = false;
-        Date date = new Date();
+        Date date = new Date(2020,4,20);
         //Date date = new Date(2020,4,20);
         SimpleDateFormat ft = new SimpleDateFormat("yyyy");
         String s = ft.format(date);
@@ -63,12 +63,13 @@ public class DatePlaying {
         System.out.println();
         System.out.println("---------Name of Current Day-------------------------");
         printNameOfDay();
-        datePlaying.countDaysOrYears(300000);
-
-
-
+        datePlaying.countDaysOrYears(527040);
 
     }
+
+
+
+
 
 
 
