@@ -1,11 +1,12 @@
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class DatePlaying {
 
     public boolean isLeapCurrentYear(){
         boolean leap = false;
-        Date date = new Date(2020,4,20);
+        Date date = new Date();
         //Date date = new Date(2020,4,20);
         SimpleDateFormat ft = new SimpleDateFormat("yyyy");
         String s = ft.format(date);
@@ -42,16 +43,33 @@ public class DatePlaying {
     }
 
     public void countDaysOrYears(int minutes){
-        int year;
+        int year = 0;
         int day = minutes/1440;
         if (isLeapCurrentYear() == true) {
-             year = minutes / 527040;
+             year = minutes /527040;
         }else{
             year = minutes/525600;
-
-
       }
         System.out.println("years: " + year + "\n" + "days: " + day);
+    }
+
+    public void leapYearSecond(){
+        LocalDate currentDate = LocalDate.now();
+        System.out.println("current date is " + currentDate);
+        int currentYear = currentDate.getYear();
+        System.out.println("Year is "+ currentYear);
+        if ((currentYear%4) > 0){
+            System.out.println("Current year is not a leap year");
+        }else{
+            System.out.println("Current year is leap year");
+        }
+    }
+
+    public void countofDaysInCurrentMonth(){
+        LocalDate currentdate = LocalDate.now();
+        int currentdayInmonth = currentdate.getDayOfMonth();
+        int dayscount = currentdate.lengthOfMonth();
+        System.out.println(dayscount);
     }
 
     public static void main(String[] args) {
@@ -63,8 +81,9 @@ public class DatePlaying {
         System.out.println();
         System.out.println("---------Name of Current Day-------------------------");
         printNameOfDay();
-        datePlaying.countDaysOrYears(527040);
-
+        datePlaying.countDaysOrYears(1900030);
+        datePlaying.leapYearSecond();
+        datePlaying.countofDaysInCurrentMonth();
     }
 
 
