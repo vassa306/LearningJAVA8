@@ -40,18 +40,27 @@ public class PrintShape {
     public static void triangle(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = i; j <= n-1; j++) {
-                System.out.print("   ");
+                System.out.print("    ");
 
             }
             for (int j = 1; j < i; j++) {
-                System.out.print("*" + "  ");
+                System.out.print("#" + "   ");
             }
             for (int j = 1; j <= i; j++) {
-                System.out.print("*" + "  ");
+                System.out.print("$" + "   ");
             }
             System.out.println();
         }
     }
+
+
+
+
+
+
+
+
+
 
         public static void pyramids() {
             int i;
@@ -77,6 +86,32 @@ public class PrintShape {
             }
         }
 
+        public static void rightTriangle(int n) {
+
+            for (int i = 1; i <= n; i++) {
+                for (int j = i; j <= n; j++) {
+                    System.out.print("     ");
+                }
+                for (int j = 1; j <= i-1; j++) {
+                    System.out.print("^" + "    ");
+                }
+                System.out.println();
+            }
+            for (int i = 1; i <=n; i++) {
+                for (int j = 1; j <=i-1; j++) {
+                    System.out.print("     ");
+                }
+                for (int j = i; j <=n ; j++) {
+                    System.out.print("^" + "    ");
+
+                }
+                System.out.println();
+            }
+
+        }
+
+
+
 
 
     public static void main(String[] args) {
@@ -86,6 +121,10 @@ public class PrintShape {
         System.out.println();
         decTriangle(n);
         triangle(n);
+        System.out.println();
+        System.out.println();
+        System.out.println("Triangle");
+        rightTriangle(n);
         System.out.println();
         pyramids();
     }
