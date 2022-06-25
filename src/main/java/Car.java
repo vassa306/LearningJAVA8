@@ -11,23 +11,22 @@ public class Car {
     }
 
 
-    public enum Types{
-        E36,E92,E30,E46,EClass2007,C220,S32004,A52015,A8,Q7,S52015;
+    public enum Types {
+        E36, E92, E30, E46, EClass2007, C220, S32004, A52015, A8, Q7, S52015;
     }
-
 
 
     Brand brand;
     Color color;
     Types types;
 
-    public Car(Brand brand, Types types, String spz, Color color){
+    public Car(Brand brand, Types types, String spz, Color color) {
         this.brand = brand;
         this.types = types;
         this.spz = spz;
         this.color = color;
 
-        }
+    }
 
     public Brand getBrand() {
         return brand;
@@ -63,11 +62,13 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "Car " +
                 "brand=" + brand +
-                ",Type=" + types +
                 ", color=" + color +
-                ", spz=" + spz +
-                '}';
+                ", types=" + types +
+                ",spz=" + spz
+
+                ;
     }
 }
+

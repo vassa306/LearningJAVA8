@@ -8,7 +8,10 @@ public class Start {
         List<Car> storeList = new ArrayList<>();
         man.assembleCarlist();
         storeList = man.assembleCarlist();
-        System.out.println(storeList.toString());
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(storeList.toString().toUpperCase());
+        System.out.println("Current state in warehouse");
+        System.out.println(stringBuilder.toString());
     }
 }
 
