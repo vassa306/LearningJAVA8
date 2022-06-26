@@ -146,19 +146,62 @@ public class PrintShape {
             System.out.println();
         }
 
-            for (int i = 2; i <= n; i++) {
-                for (int j = 2; j <= n; j++) {
-                    if (i == 2 || j == 2 || i == n || j == n) {
-                        System.out.print(" *");
-                    } else {
-                        System.out.print("  ");
-                    }
-
+        for (int i = 2; i <= n; i++) {
+            for (int j = 2; j <= n; j++) {
+                if (i == 2 || j == 2 || i == n || j == n) {
+                    System.out.print(" *");
+                } else {
+                    System.out.print("  ");
                 }
-                System.out.println("-");
+
             }
+            System.out.println("  ");
+        }
+        for (int i = 5; i <= n; i++) {
+            for (int j = 5; j <= n; j++) {
+                if (i == 4 || j == 4 || i == n || j == n) {
+                    System.out.print(" *");
+                } else {
+                    System.out.print("  ");
+                }
+
+            }
+            System.out.println(" ");
         }
 
+
+        }
+    public static void printHillPatern(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++) {
+                System.out.print("    ");
+            }
+            for (int j = 1; j < i; j++) {
+                System.out.print("*   ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*   ");
+
+
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" : ! : ! : ! : ! : ! : ! : ! : !");
+        for (int i = 1; i <=n-1 ; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("    ");
+            }
+            for (int j = i; j < n ; j++) {
+                System.out.print("*   ");
+
+            }
+            for (int j = i; j < n-1; j++) {
+                System.out.print("*   ");
+
+            }
+            System.out.println("  ");
+        }
+    }
 
 
 
@@ -181,6 +224,9 @@ public class PrintShape {
         System.out.println();
         printdiagonal(n);
         hollowSquare(n);
+        printHillPatern(n);
     }
+
+
 
 }
