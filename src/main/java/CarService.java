@@ -24,9 +24,16 @@ public class CarService {
     public LinkedList<Car> getCarlist1() {
         Car AudiS80 = new Car("Audi","80",23,300000);
         Car LamborAventador = new Car("Lamborghini", "Aventador",2,4500000);
-        carlist1.add(AudiS80);
-        carlist1.add(LamborAventador);
+
+        if (Car.class  != null) {
+            carlist1.add(AudiS80);
+            carlist1.add(LamborAventador);
+
+        }else{
+            System.out.println("Carlist is empty");
+        }
         return carlist1;
+
     }
 
     public void printList(LinkedList<Car>carlist1){

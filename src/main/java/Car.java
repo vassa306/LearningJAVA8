@@ -15,7 +15,7 @@ public class Car implements ITuningCompany {
         this.type = type;
         this.count = count;
         this.price = price;
-        ;
+
     }
 
 
@@ -62,7 +62,8 @@ public class Car implements ITuningCompany {
                         "  brand='" + brand + '\'' +
                         ", type='" + type + '\'' +
                         ", count=" + count +
-                        ", price=" + price
+                        ", price=" + price + " " + Currencies.CZK
+
                 ;
     }
 
