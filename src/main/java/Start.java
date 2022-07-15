@@ -1,9 +1,10 @@
 
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+
 
 public class Start {
 
@@ -44,7 +45,7 @@ public class Start {
         Car dodge = new Car("Dodge", "Charger", 20, 2000000);
         Car superBee = new Car("Dodge", "Coronet Super Bee", 2, 3500000);
         Car demon = new Car("Dodge", "Demon SRT", 1, 2000000);
-        System.out.println("car without tuning: " + dodge.toString()+Currencies.CZK + " " + dodge.tuneSportCar());
+        System.out.println("car without tuning: " + dodge.toString() + " " + dodge.tuneSportCar());
         //add sport package
         carService.addCar(dodge);
         carService.addCar(superBee);
@@ -66,13 +67,26 @@ public class Start {
         } else {
             System.out.println("Carlist does not include car with higher price than 1000 000");
         }
-            if (carlist1.size() > 0) {
-                //filter all cars with higher price than 1000 000
-                carlist1.stream().filter(car -> car.price > 1000000).forEach(car -> System.out.println(car.toString()));
-            } else {
-                System.out.println("Carlist is empty");
-            }
+        printCarsWithMilionPrice(carlist1);
 
+
+    }
+
+    private static void printCarsWithMilionPrice(LinkedList<Car> carlist1) {
+        if (carlist1.size() > 0) {
+            //filter all cars with higher price than 1000 000
+            //   carlist1.stream().filter(car -> car.price > 1000000).forEach(car -> System.out.println(car.toString()));
+            List<String> productList = carlist1.stream().filter(car -> car.price > 1000000).map(Car::getBrand).sorted()
+                    .collect(Collectors.toList());
+            System.out.println(productList);
+        } else {
+            System.out.println("Carlist is empty");
         }
     }
+
+
+}
+
+
+
 
