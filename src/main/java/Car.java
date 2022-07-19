@@ -1,20 +1,25 @@
-public class Car {
+
+
+public abstract class Car  {
+
+    public abstract void tune();
 
     public enum Color {
-        yellow, blue, red, green;
+        yellow, blue, red, green,black,white,blackmatte;
     }
 
-    public static String spz = null;
+    public String spz = null;
 
     public enum Brand {
-        BMW, AUDI, MERCEDES, PORSCHE;
-    }
+        BMW, AUDI, MERCEDES, PORSCHE,FORD,FERRARI,BUGATTI;
+        }
+
 
 
     public enum Types {
-        E36, E92, E30, E46, EClass2007, C220, S32004, A52015, A8, Q7, S52015;
+        E36, E92, E30, E46, EClass2007, C220, S32004, A52015, A8, Q7, S52015,CAYMAN,CARRERA,CARRERAGT,P911,MUSTANG,
+        GT,FIESTA,F40,CALIFORNIA,FFX,MONDEO,G63, G,VEYRON;
     }
-
 
     Brand brand;
     Color color;
@@ -36,7 +41,7 @@ public class Car {
         this.brand = brand;
     }
 
-    public static String getSpz() {
+    public String getSpz() {
         return spz;
     }
 
@@ -48,8 +53,8 @@ public class Car {
         this.color = color;
     }
 
-    public static void setSpz(String spz) {
-        Car.spz = spz;
+    public void setSpz(String spz) {
+        this.spz = spz;
     }
 
     public Types getTypes() {
@@ -62,13 +67,15 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car " +
-                "brand=" + brand +
-                ", color=" + color +
-                ", types=" + types +
-                ",spz=" + spz
-
+        return "Car: " +
+                " brand=" + brand +
+                " color=" + color +
+                " type=" + types +
+                " spz=" + spz +
+                " package="+
+                "\n"
                 ;
     }
 }
+
 

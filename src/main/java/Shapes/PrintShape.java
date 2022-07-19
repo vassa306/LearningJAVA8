@@ -170,7 +170,8 @@ public class PrintShape {
         }
 
 
-        }
+    }
+
     public static void printHillPatern(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = i; j < n; j++) {
@@ -181,21 +182,19 @@ public class PrintShape {
             }
             for (int j = 1; j <= i; j++) {
                 System.out.print("*   ");
-
-
             }
             System.out.println(" ");
         }
         System.out.println(" : ! : ! : ! : ! : ! : ! : ! : !");
-        for (int i = 1; i <=n-1 ; i++) {
+        for (int i = 1; i <= n - 1; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print("    ");
             }
-            for (int j = i; j < n ; j++) {
+            for (int j = i; j < n; j++) {
                 System.out.print("*   ");
 
             }
-            for (int j = i; j < n-1; j++) {
+            for (int j = i; j < n - 1; j++) {
                 System.out.print("*   ");
 
             }
@@ -203,7 +202,14 @@ public class PrintShape {
         }
     }
 
+    public static void sum(int n) {
+        int sums = 0;
+        for (int i = 0; i < n; i++) {
+            sums = sums + i;
 
+        }
+        System.out.println("sum is: "+ sums);
+    }
 
 
     public static void main(String[] args) {
@@ -225,8 +231,9 @@ public class PrintShape {
         printdiagonal(n);
         hollowSquare(n);
         printHillPatern(n);
+        System.out.println();
+        sum(n);
     }
-
 
 
 }

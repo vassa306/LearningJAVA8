@@ -1,8 +1,6 @@
-
-import jdk.jfr.internal.Utils;
+package Shapes;
 
 import java.text.DecimalFormat;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ScanPlaying {
@@ -11,7 +9,7 @@ public class ScanPlaying {
 
     public void theGreatest() {
         Scanner sc = new Scanner(System.in);
-
+        System.out.println("*************Entering into Greatest program*************");
         int first;
         System.out.print("Enter number 1: ");
         while (true)
@@ -44,9 +42,11 @@ public class ScanPlaying {
 
     }
 
-    public void sum2Numbers(int num1, int num2) {
+    public void sum2Numbers() {
+        System.out.println("****Entering into Sum2 numbers program");
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter number 1: ");
+        int num1;
         while(true) {
             try {
                 num1 = Integer.parseInt(scan.nextLine());
@@ -56,7 +56,8 @@ public class ScanPlaying {
             }
         }
             System.out.print("Enter number 2: ");
-            while (true){
+        int num2;
+        while (true){
                 try {
                     num2 = Integer.parseInt(scan.nextLine());
                     break;
@@ -124,21 +125,30 @@ public class ScanPlaying {
 
                 }
             }
-                double p = (a + b + c) / 2;
-                System.out.println(p);
-                double firstside = p - a;
-                double secondside = p - b;
-                double thirdside = p - c;
-                double area = Math.sqrt(p * firstside * secondside * thirdside);
+            double p = (a + b + c) / 2;
+            System.out.println("p value is" + p);
+            double firstside = p - a;
+            System.out.println("first side " + firstside);
+            double secondside = p - b;
+            System.out.println("second side " + secondside);
+            double thirdside = p - c;
+            System.out.println("Thirdside " + thirdside);
+            double area = Math.sqrt(p * (firstside * secondside * thirdside));
+            if (area == 0) {
+                System.out.println("probably one of side is 0: \n"  + firstside + " /" + secondside+ " /" + thirdside);
+            } else {
+                System.out.println(area);
                 area = Double.parseDouble(df.format(area));
                 System.out.println("Triangle area is: " + area);
             }
+        }
 
-            public void calculateCircumference(){
+
+            public void calculateCircumference () {
                 DecimalFormat df = new DecimalFormat("#.####");
                 double circumference = 0.0;
                 double circleradius;
-                double pi =  Math.PI;
+                double pi = Math.PI;
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Insert circle radius: ");
                 circleradius = Double.parseDouble((sc.nextLine()));
@@ -148,11 +158,15 @@ public class ScanPlaying {
             }
 
 
+
+
+
+
     public static void main (String[]args){
                     ScanPlaying scanPlaying = new ScanPlaying();
                     scanPlaying.theGreatest();
-                    scanPlaying.sum2Numbers(2,3);
-                    scanPlaying.stringParseInt("3" ,"2");
+                     scanPlaying.sum2Numbers();
+                     scanPlaying.stringParseInt("3" ,"2");
                     scanPlaying.calculateTriangleArea();
                     scanPlaying.calculateCircumference();
                 }
